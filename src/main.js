@@ -1,7 +1,7 @@
 
-document.querySelector('#app').innerHTML = `
-  <div>
-   helo
-  </div>
-`
+// document.querySelector('.galerry').innerHTML = `
+//   <div>
+//    helo
+//   </div>
+// `
 
