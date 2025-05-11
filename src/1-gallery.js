@@ -80,7 +80,7 @@ galleryUl.addEventListener("click", (event) => {
     
 });
 
-console.log(markupGallery());
+console.log(markupGallery);
 
 // const markupGallery = images
 //     .map(({ preview, original, description }) =>    
