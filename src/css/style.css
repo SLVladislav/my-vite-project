@@ -1,0 +1,37 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 зображення в рядок */
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-link {
+    display: block;
+    text-decoration: none;
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-image:hover {
+    opacity: 0.85;
+}

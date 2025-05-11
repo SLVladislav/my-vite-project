@@ -1,4 +1,5 @@
 import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
     {
       preview:
@@ -66,23 +67,6 @@ const images = [
 ];
   
 const galleryUl = document.querySelector(".gallery");
-
-
-
-galleryUl.addEventListener("click", (event) => {
-    event.preventDefault();
-    const clickImage = event.target;
-    if (clickImage) {
-        const lagreImageUrl = clickImage.dataset.source;
-        console.log("Big image", lagreImageUrl);
-
-       
-    };       
-    
-});
-
-// console.log(markupGallery);
-
 const markupGallery = images
     .map(({ preview, original, description }) =>    
         `<li class="gallery-item">
@@ -96,4 +80,15 @@ const markupGallery = images
   </a>
 </li>`
 ).join("");
+
 galleryUl.insertAdjacentHTML("beforeend", markupGallery);
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: 'alt',
+  captionDelay: 250,
+  loop: true,
+  animationSpeed: 300,
+  enableKeyboard: true
+});
+
+
+  
