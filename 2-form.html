@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My-vite-project</title>
+  <script type="module" crossorigin src="/my-vite-project/2-form.js"></script>
+  <link rel="modulepreload" crossorigin href="/my-vite-project/assets/style-CxQLkTcT.js">
+  <link rel="stylesheet" crossorigin href="/my-vite-project/assets/style-C-KFsNAK.css">
 </head>
 <body>
-    <script src="./2-form.js" type="module"></script>
+    <form class="feedback-form" autocomplete="off">
+        <label>
+            Email
+            <input type="email" name="email" autofocus />
+        </label>
+        <label>
+            Message
+            <textarea name="message" rows="8"></textarea>
+        </label>
+        <button type="submit">Submit</button>
+        </form>
 </body>
 </html>
