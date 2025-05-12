@@ -9,11 +9,9 @@ const formEl = document.querySelector(".feedback-form");
 const localValue = localStorage.getItem(localStorageKey);
 if (localValue) {
     const parseLocal = JSON.parse(localValue);
-    formEl.elements.email.value = parseLocal || '';
-    formEl.elements.message.value = parseLocal || '';
-    formData.email = parseLocal || '';
-    formData.message = parseLocal || '';
-}  
+    formEl.elements.email.value = parseLocal.email || '';
+    formEl.elements.message.value = parseLocal.message || '';
+}; 
 
 
 
