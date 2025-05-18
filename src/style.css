@@ -1,39 +1,71 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #fafafa;
-    color: #212121;
-    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+#datetime-picker {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+button[data-start] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+button[data-start]:hover:enabled {
+    background-color: #0056b3;
+}
+
+button[data-start]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
 .timer {
     display: flex;
-    gap: 5px;
-
-    font-size: 17px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.timer .field {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.field {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 80px;
 }
 
-.timer .label {
-    color: grey;
+.value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    display: block;
 }
 
-.timer .value {
-    font-size: 30px;
-    color: tomato; }
+.label {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    display: block;
+}
