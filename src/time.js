@@ -11,14 +11,11 @@ const refs = {
 }
 
 refs.btnStart.addEventListener("click", () => {
-    timer.start();
-    refs.selector.disabled = false;
-
-  
+    timer.start();  
 });
 
 let userSelectedDate = 0;
-// refs.btnStart.disabled = false;
+refs.btnStart.disabled = true;
 
 const options = {
     enableTime: true,
@@ -29,11 +26,12 @@ const options = {
         console.log(selectedDates[0]);
         if (selectedDates[0] < Date.now()) {             
             alert("Please choose a date in the future"); 
-        
-        } else {
+                   
+        } else {   
             refs.btnStart.disabled = false;
-            userSelectedDate = selectedDates[0].getDate();
-        }    
+            userSelectedDate = selectedDates[0];
+        } 
+        
                 
         console.log(userSelectedDate);
     },   
@@ -41,7 +39,7 @@ const options = {
 // console.log(options);
 
 
-const fp = flatpickr(refs.selector, options);
+flatpickr(refs.selector, options);
 
 class Timer {
     constructor({onTick}) {
@@ -50,27 +48,31 @@ class Timer {
         this.onTick = onTick
     }
     start() {
+        refs.btnStart.disabled = true;
+        
         if (this.isActive) {
             return;
         }
-        const startTime = Date.now();
+        
         this.isActive = true;
         this.intervalId = setInterval(() => {
             const currentTime = Date.now();
-            const deltaTime = currentTime - startTime;
+            const deltaTime = userSelectedDate - currentTime;
             const time = convertMs(deltaTime);
             this.onTick(time);
         
-            if (deltaTime <= 1000) {
-                this.stop();
-            }
+            // if (deltaTime <= 0) {
+            //     this.stop();
+            // }
 
             
         }, 1000)
     }
-    stop() {
-        clearInterval(this.intervalId);
+    stop() {       
+        clearInterval(this.intervalId);  
         this.isActive = false;
+        // const time = convertMs(0);
+        // this.onTick = time;
     }
 }
 
