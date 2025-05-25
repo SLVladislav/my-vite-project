@@ -32,7 +32,7 @@ ref.btnForm.addEventListener("submit", (event) => {
 function formBtn(delay, state) {
     return new Promise((resolve, reject) => {    
         setTimeout(() => {            
-            if (state === "fulfilled") {
+            if (state) {
                 resolve(state);
             } else {
                 reject(state);
